@@ -3,7 +3,7 @@ import React from "react";
 function Dashboard(props) {
   return (
     <>
-      <div>
+      <div className="display">
         <div id="content-wrapper" className="d-flex flex-column">
           <div className="container-fluid">
             {/* <!-- Page Heading --> */}

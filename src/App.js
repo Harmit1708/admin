@@ -1,14 +1,13 @@
-import './App.css'
-import Sidebar from './components/Sidebar'
-import Dashboard from './components/Dashboard'
-import Allstudents from './components/Allstudents'
-import Addstudents from './components/Addstudents'
-import {BrowserRouter,Route,Routes} from 'react-router-dom'
-import {useState} from 'react'
-import EditStudent from "./components/EditStudent"
+import "./App.css";
+import Sidebar from "./components/Sidebar";
+import Dashboard from "./components/Dashboard";
+import Allstudents from "./components/Allstudents";
+import Addstudents from "./components/Addstudents";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useState } from "react";
+import EditStudent from "./components/EditStudent";
 
 function App() {
-
   let data = {
     earning: "40,000",
     annual: "2,40,000",
@@ -34,7 +33,7 @@ function App() {
       email: "Raj@gmail.com",
       mobile: "12345678",
       class: "B30WD",
-    }
+    },
   ]);
   return (
     <BrowserRouter>
@@ -45,9 +44,18 @@ function App() {
         <div>
           <Routes>
             <Route path="/dashboard" element={<Dashboard data={data} />} />
-            <Route path="/all-students" element={<Allstudents data ={{students,setStudents}} />} />
-            <Route path="/add-students" element={<Addstudents data={{students,setStudents}} />} />
-            <Route path="/edit-student/:id" element={<EditStudent data={{students,setStudents}} />} />
+            <Route
+              path="/all-students"
+              element={<Allstudents data={{ students, setStudents }} />}
+            />
+            <Route
+              path="/add-students"
+              element={<Addstudents data={{ students, setStudents }} />}
+            />
+            <Route
+              path="/edit-student/:id"
+              element={<EditStudent data={{ students, setStudents }} />}
+            />
             <Route path="/" element={<Dashboard data={data} />} />
           </Routes>
         </div>

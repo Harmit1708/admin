@@ -16,7 +16,7 @@ let handlesubmit = () => {
   newArr.push(newData);
   props.data.setStudents(newArr)
 
-  navigate("/all-");
+  navigate("/all-students");
 }
 
   return (
