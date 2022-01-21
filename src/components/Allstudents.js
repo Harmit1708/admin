@@ -1,19 +1,23 @@
 import React from "react";
 import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
-import {Link,useNavigate} from 'react-router-dom'
+import {Link} from 'react-router-dom'
+import { StudentContext } from "../App";
+import {useContext} from 'react'
 
-function Allstudents(props) {
 
-  let navigate = useNavigate();
-  let handleDelete = (i) => {
-    let newArray = [...props.data.students];
-    newArray.splice(i,1);
+function Allstudents() {
 
-    props.data.setStudents(newArray);
+    let context = useContext(StudentContext);
+
+    let handleDelete = (i) => {
+      let newArray = [...context.students];
+      newArray.splice(i,1);
+
+      context.setStudents(newArray);
   }
   return<>
-      <Table striped bordered hover>
+      <Table className="Allstu" striped bordered hover>
         <thead>
           <tr>
             <th>#</th>
@@ -26,7 +30,7 @@ function Allstudents(props) {
 
         <tbody>
           {
-            props.data.students.map((e,i) => {
+            context.students.map((e,i) => {
             return (
                   <tr key={i}>
                     <td>{i+1}</td>

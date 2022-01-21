@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState, useEffect } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useParams, useNavigate } from "react-router-dom";
+import { StudentContext } from "../App";
 
-function EditStudent(props) {
+function EditStudent() {
+
+  let context = useContext(StudentContext);
+
   useEffect(() => {
-    if (params.id < props.data.students.length) {
+    if (params.id < context.students.length) {
       getData();
     } else {
       alert("Selected student is not available");
@@ -21,17 +25,17 @@ function EditStudent(props) {
   let [cls, setCls] = useState("");
 
   let getData = () => {
-    setName(props.data.students[params.id].name);
-    setEmail(props.data.students[params.id].email);
-    setMobile(props.data.students[params.id].mobile);
-    setCls(props.data.students[params.id].class);
+    setName(context.students[params.id].name);
+    setEmail(context.students[params.id].email);
+    setMobile(context.students[params.id].mobile);
+    setCls(context.students[params.id].class);
   };
 
   let handlesubmit = () => {
     let newData = { name, email, mobile, class: cls };
-    let newArr = [...props.data.students]
+    let newArr = [...context.students]
     newArr.splice(params.id,1,newData)
-    props.data.setStudents(newArr);
+    context.setStudents(newArr);
     navigate("/all-students");
   };
 

@@ -4,8 +4,10 @@ import Dashboard from "./components/Dashboard";
 import Allstudents from "./components/Allstudents";
 import Addstudents from "./components/Addstudents";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { useState } from "react";
+import React,{ useState } from "react";
 import EditStudent from "./components/EditStudent";
+
+export const StudentContext = React.createContext();
 
 function App() {
   let data = {
@@ -37,29 +39,31 @@ function App() {
   ]);
   return (
     <BrowserRouter>
-      <div style={{ display: "grid", gridTemplateColumns: "13% 85%" }}>
-        <div>
-          <Sidebar />
+      <StudentContext.Provider value={{ students, setStudents }}>
+        <div style={{ display: "grid", gridTemplateColumns: "13% 85%" }}>
+          <div>
+            <Sidebar />
+          </div>
+          <div>
+            <Routes>
+              <Route path="/dashboard" element={<Dashboard data={data} />} />
+              <Route
+                path="/all-students"
+                element={<Allstudents data={{ students, setStudents }} />}
+              />
+              <Route
+                path="/add-students"
+                element={<Addstudents data={{ students, setStudents }} />}
+              />
+              <Route
+                path="/edit-student/:id"
+                element={<EditStudent data={{ students, setStudents }} />}
+              />
+              <Route path="/" element={<Dashboard data={data} />} />
+            </Routes>
+          </div>
         </div>
-        <div>
-          <Routes>
-            <Route path="/dashboard" element={<Dashboard data={data} />} />
-            <Route
-              path="/all-students"
-              element={<Allstudents data={{ students, setStudents }} />}
-            />
-            <Route
-              path="/add-students"
-              element={<Addstudents data={{ students, setStudents }} />}
-            />
-            <Route
-              path="/edit-student/:id"
-              element={<EditStudent data={{ students, setStudents }} />}
-            />
-            <Route path="/" element={<Dashboard data={data} />} />
-          </Routes>
-        </div>
-      </div>
+      </StudentContext.Provider>
     </BrowserRouter>
   );
 }

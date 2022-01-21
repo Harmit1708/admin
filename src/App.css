@@ -41,6 +41,8 @@
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+
+/* Dashboard */
 @media only screen and (max-width: 1300px) {
   .display{
     margin-left:75px;
@@ -70,6 +72,90 @@
 
 @media only screen and (max-width: 600px) {
   .display{
+    margin-left:75px;
+  }
+}
+
+
+/* Add Students */
+@media only screen and (max-width: 1300px) {
+  .Addstu{
+    margin-left:75px;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  .Addstu{
+    margin-left:75px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .Addstu{
+    margin-left:75px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .Addstu{
+    margin-left:75px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .Addstu{
+    margin-left:75px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .Addstu{
+    margin-left:75px;
+  }
+}
+
+
+@media only screen and (max-width: 300px) {
+  .Addstu{
+    margin-left:75px;
+  }
+}
+
+
+/* All Students */
+@media only screen and (max-width: 1300px) {
+  .Allstu{
+    margin-left:75px;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  .Allstu{
+    margin-left:75px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .Allstu{
+    margin-left:75px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .Allstu{
+    margin-left:75px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .Allstu{
+    margin-left:75px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .Allstu{
+    margin-left:75px;
+  }
+}
+
+
+@media only screen and (max-width: 300px) {
+  .Allstu{
     margin-left:75px;
   }
 }
